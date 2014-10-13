@@ -1,5 +1,4 @@
-library(rCharts)
-library(slidify)
+require(rCharts)
 # Read airtraffic data
 auAirTrafficRaw <- read.csv("C:/AAA-Slidify/auAirTraffic_V2.csv")
 

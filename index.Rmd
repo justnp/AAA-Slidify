@@ -31,6 +31,8 @@ auAirTrafficRaw <- read.csv("C:/AAA-Slidify/auAirTraffic_V2.csv")
 
 # Remove the records without blank Ranks
 auAirTraffic <- subset(auAirTrafficRaw, RANK != '-')
+library(rCharts)
+library(slidify)
 
 ```
 ## Interactive Airport Passenger Movements Analysis's by Airport type
