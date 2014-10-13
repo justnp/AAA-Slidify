@@ -1,5 +1,6 @@
 base
 devtools
+knitr
 quantmod
 rCharts
 shiny
