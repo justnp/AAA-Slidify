@@ -5,10 +5,10 @@ author      : just_np
 job         : BI Consultant
 framework   : io2012          # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js    # {highlight.js, prettify, highlight}
-hitheme     : tomorrow       # tomorrow solarized_light
+hitheme     : solarized_light # tomorrow 
 widgets     : [polycharts, bootstrap, shiny, interactive]
-mode        : selfcontained # {selfcontained or standalone, draft}
-ext_widgets : {rCharts: [libraries/nvd3]}
+mode        : selfcontained   # {selfcontained, standalone, draft}
+ext_widgets : {rCharts: [/libraries/nvd3]}
 knit        : slidify::knit2slides
 ---
 
@@ -25,19 +25,20 @@ In the following slides you can interactively analyse the Australian Airport Tra
 
 ---
 
-```{r, echo = FALSE}
+```{r, echo = F,  message = F, cache = F}
+knitr::opts_chunk$set(comment = NA, tidy = F, message = T)
+
 # Read airtraffic data
 auAirTrafficRaw <- read.csv("/AAA-Slidify/auAirTraffic_V2.csv")
-
+library(slidify)
+require(rCharts)
 # Remove the records without blank Ranks
 auAirTraffic <- subset(auAirTrafficRaw, RANK != '-')
-library(rCharts)
-library(slidify)
-
 ```
+
 ## Interactive Airport Passenger Movements Analysis's by Airport type
 
-```{r opts.label = 'shiny'}
+```{r opts.label = 'shiny', cache = F}
 
 slidifyUI(
   sidebarPanel(selectInput(inputId = "stktrafficType",
@@ -61,7 +62,7 @@ slidifyUI(
 
 ## Interactive Airport Passenger Movements Analysis's by Cities
 
-```{r opts.label = 'shiny'}
+```{r opts.label = 'shiny', cache = F}
 
 slidifyUI(
   sidebarPanel(selectInput(inputId = "scttrafficType",
@@ -69,25 +70,14 @@ slidifyUI(
                 choices = c("Domestic", "International"),
                 selected = "Domestic"),
                selectInput(inputId = "sctstate",
-                label = "Choose a state to compare year:", 
+                label = "Select a state to compare year",
                 choices = c("ACT", "NSW", "NT", "QLD", "SA", "TAS", "VIC", "WA"),
-                selected = "NT")                                                  
+                selected = "NT"),
+               selectInput(inputId = "type",
+                label = "Choose Chart Type",
+                choices = c("multiBarChart", "multiBarHorizontalChart"),
+                selected = "multiBarChart")                                                   
        ),
   mainPanel(tags$div(id = 'sctChart', class='shiny-html-output nvd3 rChart'))  
-)
-```
-
----
-
-## Interactive Airport Passenger Movements Analysis's by Year
-
-```{r opts.label = 'shiny'}
-slidifyUI(
-  sidebarPanel(selectInput(inputId = "sct1trafficType",
-                label = "Select Airport Type",
-                choices = c("Domestic", "International"),
-                selected = "Domestic")                                          
-       ),
-  mainPanel(tags$div(id = 'sctChart1', class='shiny-html-output nvd3 rChart'))  
 )
 ```

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
     media="only screen and (max-device-width: 480px)" >
   <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
-  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/solarized_light.css" />
   <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
 <link rel=stylesheet href="libraries/widgets/interactive/css/aceeditor.css"></link>
 <link rel=stylesheet href="libraries/widgets/nvd3/css/nv.d3.css"></link>
@@ -133,10 +133,10 @@
   <div class="span4">
     <form class="well">
       <label class="control-label" for="scttrafficType">Select Airport Type</label>
-      <select id="scttrafficType"><option value="Domestic" selected>Domestic</option>
-<option value="International">International</option></select>
+      <select id="scttrafficType"><option value="Domestic">Domestic</option>
+<option value="International" selected>International</option></select>
       <script type="application/json" data-for="scttrafficType" data-nonempty="">{}</script>
-      <label class="control-label" for="sctstate">Choose a state to compare year:</label>
+      <label class="control-label" for="sctstate">Select a state to compare year</label>
       <select id="sctstate"><option value="ACT">ACT</option>
 <option value="NSW">NSW</option>
 <option value="NT" selected>NT</option>
@@ -146,33 +146,14 @@
 <option value="VIC">VIC</option>
 <option value="WA">WA</option></select>
       <script type="application/json" data-for="sctstate" data-nonempty="">{}</script>
+      <label class="control-label" for="type">Choose Chart Type</label>
+      <select id="type"><option value="multiBarChart" selected>multiBarChart</option>
+<option value="multiBarHorizontalChart">multiBarHorizontalChart</option></select>
+      <script type="application/json" data-for="type" data-nonempty="">{}</script>
     </form>
   </div>
   <div class="span8">
     <div id="sctChart" class="shiny-html-output nvd3 rChart"></div>
-  </div>
-</div>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-4" style="background:;">
-  <hgroup>
-    <h2>Interactive Airport Passenger Movements Analysis&#39;s by Year</h2>
-  </hgroup>
-  <article data-timings="">
-    <div class="row-fluid">
-  <div class="span4">
-    <form class="well">
-      <label class="control-label" for="sct1trafficType">Select Airport Type</label>
-      <select id="sct1trafficType"><option value="Domestic" selected>Domestic</option>
-<option value="International">International</option></select>
-      <script type="application/json" data-for="sct1trafficType" data-nonempty="">{}</script>
-    </form>
-  </div>
-  <div class="span8">
-    <div id="sctChart1" class="shiny-html-output nvd3 rChart"></div>
   </div>
 </div>
 
@@ -200,12 +181,6 @@
       <a href="#" target="_self" rel='tooltip' 
         data-slide=3 title='Interactive Airport Passenger Movements Analysis&#39;s by Cities'>
          3
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Interactive Airport Passenger Movements Analysis&#39;s by Year'>
-         4
       </a>
     </li>
   </ul>

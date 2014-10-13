@@ -1,8 +1,7 @@
-library(rCharts)
+require(rCharts)
 library(slidify)
-
 # Read airtraffic data
-auAirTrafficRaw <- read.csv("/AAA-Slidify/auAirTraffic_V2.csv")
+#auAirTrafficRaw <- read.csv("/AAA-Slidify/auAirTraffic_V2.csv")
 
 # Remove the records without blank Ranks
 auAirTraffic <- subset(auAirTrafficRaw, RANK != '-')
@@ -46,3 +45,4 @@ output$sctChart1 <- renderChart({
   sccplot1$chart(margin = list(right = 100))                
   return(sccplot1)
 })
+

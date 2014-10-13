@@ -5,10 +5,10 @@ author      : just_np
 job         : BI Consultant
 framework   : io2012          # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js    # {highlight.js, prettify, highlight}
-hitheme     : tomorrow       # tomorrow solarized_light
+hitheme     : solarized_light # tomorrow 
 widgets     : [polycharts, bootstrap, shiny, interactive]
-mode        : selfcontained # {selfcontained or standalone, draft}
-ext_widgets : {rCharts: [libraries/nvd3]}
+mode        : selfcontained   # {selfcontained, standalone, draft}
+ext_widgets : {rCharts: [/libraries/nvd3]}
 knit        : slidify::knit2slides
 ---
 
@@ -24,6 +24,7 @@ The data used in AAA is spanned from year 1985 to 2013
 In the following slides you can interactively analyse the Australian Airport Traffic dataset
 
 ---
+
 
 
 ## Interactive Airport Passenger Movements Analysis's by Airport type
@@ -85,10 +86,10 @@ In the following slides you can interactively analyse the Australian Airport Tra
   <div class="span4">
     <form class="well">
       <label class="control-label" for="scttrafficType">Select Airport Type</label>
-      <select id="scttrafficType"><option value="Domestic" selected>Domestic</option>
-<option value="International">International</option></select>
+      <select id="scttrafficType"><option value="Domestic">Domestic</option>
+<option value="International" selected>International</option></select>
       <script type="application/json" data-for="scttrafficType" data-nonempty="">{}</script>
-      <label class="control-label" for="sctstate">Choose a state to compare year:</label>
+      <label class="control-label" for="sctstate">Select a state to compare year</label>
       <select id="sctstate"><option value="ACT">ACT</option>
 <option value="NSW">NSW</option>
 <option value="NT" selected>NT</option>
@@ -98,27 +99,13 @@ In the following slides you can interactively analyse the Australian Airport Tra
 <option value="VIC">VIC</option>
 <option value="WA">WA</option></select>
       <script type="application/json" data-for="sctstate" data-nonempty="">{}</script>
+      <label class="control-label" for="type">Choose Chart Type</label>
+      <select id="type"><option value="multiBarChart" selected>multiBarChart</option>
+<option value="multiBarHorizontalChart">multiBarHorizontalChart</option></select>
+      <script type="application/json" data-for="type" data-nonempty="">{}</script>
     </form>
   </div>
   <div class="span8">
     <div id="sctChart" class="shiny-html-output nvd3 rChart"></div>
-  </div>
-</div>
-
----
-
-## Interactive Airport Passenger Movements Analysis's by Year
-
-<div class="row-fluid">
-  <div class="span4">
-    <form class="well">
-      <label class="control-label" for="sct1trafficType">Select Airport Type</label>
-      <select id="sct1trafficType"><option value="Domestic" selected>Domestic</option>
-<option value="International">International</option></select>
-      <script type="application/json" data-for="sct1trafficType" data-nonempty="">{}</script>
-    </form>
-  </div>
-  <div class="span8">
-    <div id="sctChart1" class="shiny-html-output nvd3 rChart"></div>
   </div>
 </div>
