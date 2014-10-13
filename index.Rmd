@@ -5,7 +5,7 @@ author      : just_np
 job         : BI Consultant
 framework   : io2012          # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js    # {highlight.js, prettify, highlight}
-hitheme     : solarized_light # tomorrow 
+hitheme     : tomorrow       # tomorrow solarized_light
 widgets     : [polycharts, bootstrap, shiny, interactive]
 mode        : selfcontained # {selfcontained or standalone, draft}
 ext_widgets : {rCharts: [libraries/nvd3]}
@@ -27,7 +27,8 @@ In the following slides you can interactively analyse the Australian Airport Tra
 
 ```{r, echo = FALSE}
 # Read airtraffic data
-auAirTrafficRaw <- read.csv("C:/AAA-Slidify/auAirTraffic_V2.csv")
+setwd("C:/AAA-Slidify")
+auAirTrafficRaw <- read.csv("auAirTraffic_V2.csv")
 
 # Remove the records without blank Ranks
 auAirTraffic <- subset(auAirTrafficRaw, RANK != '-')

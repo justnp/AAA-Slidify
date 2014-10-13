@@ -1,7 +1,8 @@
 library(rCharts)
 library(slidify)
 # Read airtraffic data
-auAirTrafficRaw <- read.csv("C:/AAA-Slidify/auAirTraffic_V2.csv")
+setwd("C:/AAA-Slidify")
+auAirTrafficRaw <- read.csv("auAirTraffic_V2.csv")
 
 # Remove the records without blank Ranks
 auAirTraffic <- subset(auAirTrafficRaw, RANK != '-')

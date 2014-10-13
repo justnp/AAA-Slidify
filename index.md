@@ -5,7 +5,7 @@ author      : just_np
 job         : BI Consultant
 framework   : io2012          # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js    # {highlight.js, prettify, highlight}
-hitheme     : solarized_light # tomorrow 
+hitheme     : tomorrow       # tomorrow solarized_light
 widgets     : [polycharts, bootstrap, shiny, interactive]
 mode        : selfcontained # {selfcontained or standalone, draft}
 ext_widgets : {rCharts: [libraries/nvd3]}
